@@ -3,10 +3,14 @@ import '../styles/_launchpad.scss';
 
 export default function LaunchPad({Rocket}) {
   const [rerenderCount, triggerRerender] = useState(0);
-  setTimeout(() => { triggerRerender(rerenderCount + 1); }, 500);
+    
+  function launchRocket () {
+    triggerRerender(Date.now());
+  }
 
   return (
     <div className="launchpad">
+      <button onClick={launchRocket}> Launch Rocket</button>
       <Rocket />
     </div>
   );
