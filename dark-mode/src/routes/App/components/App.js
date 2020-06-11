@@ -5,6 +5,18 @@ import '../styles/_app.scss';
 
 import ThemeContext from '../../../context';
 
+const themeMap = {
+  dark: {
+    color: '#FFA500',
+    iconType: faSun,
+  },
+  light: {
+    color: null,
+    iconType: faMoon,
+  }
+}
+
+
 function App() {
   const {dispatch, state} = useContext(ThemeContext);
 
@@ -28,7 +40,7 @@ function App() {
           className="app__dark-mode-btn icon level-right"
           onClick={handleThemePicker}
           >
-          <FontAwesomeIcon color={theme === 'dark' ?'#FFA500' : null} icon={theme === 'light' ? faMoon : faSun} />
+          <FontAwesomeIcon color={themeMap[theme].color} icon={themeMap[theme].iconType} />
         </button>
 
       </div>

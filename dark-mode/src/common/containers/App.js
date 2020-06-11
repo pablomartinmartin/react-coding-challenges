@@ -16,10 +16,10 @@ export default function App({ children }) {
   useLayoutEffect(() => {
     switch (theme) {
       case 'dark':
-        document.body.classList.add(DARK_MODE_CLASS);
+        document.getElementById('root').classList.add(DARK_MODE_CLASS);
         break;
       default:
-        document.body.classList.remove(DARK_MODE_CLASS);
+        document.getElementById('root').classList.remove(DARK_MODE_CLASS);
         break;
     }
   }, [theme]);
